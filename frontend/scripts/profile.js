@@ -11,9 +11,17 @@ const userAccessibility = document.getElementById("user-accessibility");
 const userSeat = document.getElementById("user-seat");
 const userAssistance = document.getElementById("user-assistance");
 const logout = document.getElementById("logout");
+const questions = document.getElementById("questions");
+const profile = document.getElementById("profile");
 
 logout.addEventListener("click", () => {
   window.location.href = "/frontend/pages/signin.html";
+});
+profile.addEventListener("click", () => {
+  window.location.href = "/frontend/pages/profile.html";
+});
+questions.addEventListener("click", () => {
+  window.location.href = "/frontend/pages/faq.html";
 });
 
 const userID = localStorage.getItem("UserID");
