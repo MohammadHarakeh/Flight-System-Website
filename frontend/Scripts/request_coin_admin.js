@@ -11,12 +11,21 @@ const updateApprovalStatus = (requestID, newStatus) => {
             const data = response.data;
             if (data.success) {
                 console.log("Approval status updated successfully!");
+                if (newStatus === "Accept") {
+                    const row = tableBody.querySelector(`tr[data-requestid="${requestID}"]`);
+                    if (row) {
+                        const coinsAmountCell = row.querySelector(".coins-amount");
+                        if (coinsAmountCell) {
+                            coinsAmountCell.textContent = "Accepted";
+                        }
+                    }
+                }
             } else {
-                console.error("Error updating approval status:", data.message);
+                console.log("Error updating approval status:", data.message);
             }
         })
         .catch((error) => {
-            console.error("Error updating approval status:", error);
+            console.log("Error updating approval status:", error);
         });
 };
 
@@ -28,7 +37,7 @@ axios
             const row = document.createElement("tr");
             row.innerHTML = `
             <td>${request.UserID}</td>
-            <td>${request.coinsAmount}</td>
+            <td class="coins-amount">${request.coinsAmount}</td>
             <td>
                 <select class="status-select" data-requestid="${request.requestId}">
                     <option value="Pending" ${request.ApprovalStatus === "Pending" ? "selected" : ""}>Pending</option>
@@ -38,9 +47,8 @@ axios
             </td>
           `;
             tableBody.appendChild(row);
-        });
 
-        document.querySelectorAll(".status-select").forEach(select => {
+            const select = row.querySelector(".status-select");
             select.addEventListener("change", (event) => {
                 const requestID = event.target.getAttribute("data-requestid");
                 const newStatus = event.target.value;
@@ -49,5 +57,5 @@ axios
         });
     })
     .catch(error => {
-        console.error("Error:", error);
+        console.log("Error fetching coin requests:", error);
     });
