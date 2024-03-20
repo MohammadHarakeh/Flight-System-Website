@@ -3,10 +3,6 @@ const errorMessage = document.getElementById("error-message");
 const loginLink = document.getElementById("login-link");
 const emailRegex = /^[^s@]+@[^s@]+.[^s@]+$/;
 
-loginLink.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/signin.html";
-});
-
 function addUser() {
   try {
     const fullName = document.getElementById("full-name").value;
