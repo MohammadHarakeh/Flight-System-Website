@@ -13,6 +13,11 @@ body {
   display: flex;
   justify-content: space-around;
   margin-top: 5%;
+  margin-bottom: 5%;
+}
+
+.logo {
+  cursor: pointer;
 }
 
 .faq-card {

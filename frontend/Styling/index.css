@@ -16,7 +16,7 @@
 .request-coins {
   display: flex;
   justify-content: center;
-  padding-top: 33%;
+  padding-top: 28%;
 }
 
 .request-coins a {
@@ -81,21 +81,10 @@
   height: 5vh;
 }
 
-footer {
-  background-color: #1f2b58;
-  height: 15vh;
+#logo {
+  cursor: pointer;
 }
 
-.icons {
-  display: flex;
-  font-size: 150%;
-  color: #fbfbfb;
-  justify-content: center;
-  align-items: center;
-  height: 9vh;
-  gap: 20px;
-}
-
-.copyright {
-  color: #fbfbfb;
+.icons i:hover {
+  cursor: pointer;
 }

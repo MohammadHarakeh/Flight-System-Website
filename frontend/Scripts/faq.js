@@ -21,6 +21,30 @@ const faqContent = [
   // Add more questions and content as needed
 ];
 
+logo.addEventListener("click", () => {
+  window.location.href = "/frontend/index.html";
+});
+
+home.addEventListener("click", () => {
+  window.location.href = "/frontend/index.html";
+});
+
+questions.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/faq.html";
+});
+
+// book.addEventListener("click", () => {
+//     window.location.href = "";
+//   });
+
+profile.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/profile.html";
+});
+
+logout.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/signin.html";
+});
+
 function testing(arg) {
   let items = "";
   for (let i = 0; i < arg.length; i++) {

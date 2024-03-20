@@ -15,14 +15,28 @@ const questions = document.getElementById("questions");
 const profile = document.getElementById("profile");
 const amount = document.getElementById("amount");
 
-logout.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/signin.html";
+logo.addEventListener("click", () => {
+  window.location.href = "/frontend/index.html";
 });
-profile.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/profile.html";
+
+home.addEventListener("click", () => {
+  window.location.href = "/frontend/index.html";
 });
+
 questions.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/faq.html";
+  window.location.href = "/frontend/Pages/faq.html";
+});
+
+// book.addEventListener("click", () => {
+//     window.location.href = "";
+//   });
+
+profile.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/profile.html";
+});
+
+logout.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/signin.html";
 });
 
 const userID = localStorage.getItem("UserID");

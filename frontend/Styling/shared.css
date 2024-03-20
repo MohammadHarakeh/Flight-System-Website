@@ -109,3 +109,22 @@ header {
   align-items: center;
   padding: 1% 5%;
 }
+
+footer {
+  background-color: #1f2b58;
+  height: 15vh;
+}
+
+.icons {
+  display: flex;
+  font-size: 150%;
+  color: #fbfbfb;
+  justify-content: center;
+  align-items: center;
+  height: 9vh;
+  gap: 20px;
+}
+
+.copyright {
+  color: #fbfbfb;
+}
