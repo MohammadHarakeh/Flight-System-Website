@@ -13,15 +13,30 @@ const userAssistance = document.getElementById("user-assistance");
 const logout = document.getElementById("logout");
 const questions = document.getElementById("questions");
 const profile = document.getElementById("profile");
+const amount = document.getElementById("amount");
+
+logo.addEventListener("click", () => {
+  window.location.href = "/frontend/index.html";
+});
+
+home.addEventListener("click", () => {
+  window.location.href = "/frontend/index.html";
+});
+
+questions.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/faq.html";
+});
+
+// book.addEventListener("click", () => {
+//     window.location.href = "";
+//   });
+
+profile.addEventListener("click", () => {
+  window.location.href = "/frontend/Pages/profile.html";
+});
 
 logout.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/signin.html";
-});
-profile.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/profile.html";
-});
-questions.addEventListener("click", () => {
-  window.location.href = "/frontend/pages/faq.html";
+  window.location.href = "/frontend/Pages/signin.html";
 });
 
 const userID = localStorage.getItem("UserID");
@@ -55,6 +70,7 @@ function editButtonInfo(data) {
     userAccessibility.textContent;
   document.getElementById("seat").value = userSeat.textContent;
   document.getElementById("assistance").value = userAssistance.textContent;
+  document.getElementById("amount").value = data.user_info[0].amount;
 }
 
 try {
@@ -78,6 +94,7 @@ try {
         userAccessibility.textContent = data.user_info[0].accessibility;
         userSeat.textContent = data.user_info[0].seat;
         userAssistance.textContent = data.user_info[0].assistance;
+        amount.textContent = data.user_info[0].amount;
 
         editBtn.addEventListener("click", () => {
           toggleButtons();
@@ -106,6 +123,7 @@ confirmBtn.addEventListener("click", () => {
   formData.append("accessibility", accessibility);
   formData.append("seat", seat);
   formData.append("assistance", assistance);
+  formData.append("amount", amount);
 
   try {
     fetch("http://127.0.0.1/Flight-System-Website/backend/updateUser.php", {
@@ -118,7 +136,7 @@ confirmBtn.addEventListener("click", () => {
       })
       .then((data) => {
         if (data.status === "error") {
-          console.log("Error updating data");
+          console.error("Error updating data:", data.message);
         } else if (data.status === "success") {
           exitEditing();
           userGreeting.innerHTML = "Hi " + `<b> ${fullName}</b>`;
@@ -126,6 +144,7 @@ confirmBtn.addEventListener("click", () => {
           userAccessibility.textContent = accessibility;
           userSeat.textContent = seat;
           userAssistance.textContent = assistance;
+          amount.textContent = data.user_info.amount;
         }
       });
   } catch (error) {

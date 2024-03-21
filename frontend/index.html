@@ -3,9 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/frontend/Styling/index.css" />
+    <link rel="stylesheet" href="/frontend/Styling/shared.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <title>AirDash</title>
   </head>
   <body>
-    <h1>Test Hussein</h1>
+    <div class="hero-header-container">
+      <header>
+        <div class="logo">
+          <h2 id="logo">AirDash</h2>
+        </div>
+
+        <div class="header-right">
+          <h2 class="header-btn" id="home">Home</h2>
+          <h2 id="questions" class="header-btn">Questions</h2>
+          <h2 class="header-btn" id="book">Book</h2>
+          <h2 id="profile" class="header-btn">Profile</h2>
+          <h2 id="logout" class="header-btn">Logout</h2>
+        </div>
+      </header>
+
+      <link href="/frontend/Pages/faq.html" />
+      <div class="hero-section">
+        <div class="request-coins">
+          <a id="requestCoins"> Request Coins</a>
+        </div>
+      </div>
+    </div>
+    <div class="book-flight-wrapper display-flex centered">
+      <div class="switcher display-flex">
+        <div class="book-flight">
+          <p>Book a flight</p>
+        </div>
+
+        <div class="flight-status">
+          <p>Flight status</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flight-info-wrapper display-flex">
+      <div class="flight-card">Flight Data Here</div>
+    </div>
+
+    <footer>
+      <div class="icons">
+        <i class="fa-brands fa-facebook"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-linkedin"></i>
+      </div>
+
+      <div class="copyright display-flex centered">
+        <p>Copyright © 2024 - Website name</p>
+      </div>
+    </footer>
+    <script src="/frontend/scripts/index.js"></script>
   </body>
 </html>
