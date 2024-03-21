@@ -1,9 +1,14 @@
 const form = document.getElementById("requestCoinsForm");
 
+const userID = localStorage.getItem("UserID");
+
+if (userID) {
+  document.getElementById("UserID").value = userID;
+}
+
 form.addEventListener("submit", function (event) {
   event.preventDefault();
 
-  const userID = document.getElementById("UserID").value;
   const coinsAmount = document.getElementById("coinsAmount").value;
 
   const formData = new FormData();
