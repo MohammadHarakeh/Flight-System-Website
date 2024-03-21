@@ -79,7 +79,7 @@ function createFlightCard(numFlights) {
       <div class="button-container">
       <div class="buttons">
         <div class="book">
-          <a id="review-flight">Review Flight</a>
+          <a id="review-flight" class="review-flight">Review Flight</a>
         </div>
         <div class="book">
           <a id="book-flight">Book Flight</a>
@@ -90,9 +90,11 @@ function createFlightCard(numFlights) {
   }
   flightCardWrapper.innerHTML = flightCardsHTML;
 
-  const reviewFlight = document.getElementById("review-flight");
-  reviewFlight.addEventListener("click", function () {
-    console.log("click");
-    window.location.href = "/frontend/Pages/add_feedback.html";
+  const reviewFlight = document.querySelectorAll(".review-flight");
+  reviewFlight.forEach((reviewFlight) => {
+    reviewFlight.addEventListener("click", function () {
+      console.log("click");
+      window.location.href = "/frontend/Pages/add_feedback.html";
+    });
   });
 }
