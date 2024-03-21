@@ -27,10 +27,13 @@ login.addEventListener("click", () => {
         if (data.status === "error") {
           errorMessage.textContent = data.message;
         } else if (data.status === "success") {
-          console.log(data.UserID);
-          localStorage.setItem("UserID", data.UserID);
-          window.location.href = "/frontend/pages/profile.html";
-          console.log("Sign in successfully");
+          if (email === "admin@gmail.com" && password === "Admin") {
+            localStorage.setItem("UserID", data.UserID);
+            window.location.href = "/frontend/pages/admin/adminDash.html";
+          } else {
+            localStorage.setItem("UserID", data.UserID);
+            window.location.href = "/frontend/index.html";
+          }
         }
       });
   } catch (error) {
