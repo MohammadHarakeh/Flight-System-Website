@@ -59,16 +59,19 @@ fetch("http://127.0.0.1/Flight-System-Website/backend/getFlightData.php", {
 
 function createFlightCard(numFlights) {
   const flightCardWrapper = document.getElementById("flight-card-wrapper");
+
   let flightCardsHTML = "";
 
   for (let i = 0; i < numFlights; i++) {
     const arrivalCity = flightData[i].ArrivalCity;
     const departureCity = flightData[i].DepartureCity;
     const price = flightData[i].price;
+    const flightID = flightData[i].FlightID;
 
     flightCardsHTML += `
     <div class="flight-card">
       <div class="flight-card-data">
+      <p>Flight ID: ${flightID}</p>
         <p>Departure City: ${departureCity}</p>
         <p>Arrival City: ${arrivalCity}</p>
         <p>Price: ${price}</p>
@@ -86,4 +89,10 @@ function createFlightCard(numFlights) {
   </div>`;
   }
   flightCardWrapper.innerHTML = flightCardsHTML;
+
+  const reviewFlight = document.getElementById("review-flight");
+  reviewFlight.addEventListener("click", function () {
+    console.log("click");
+    window.location.href = "/frontend/Pages/add_feedback.html";
+  });
 }
