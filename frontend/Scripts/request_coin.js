@@ -25,6 +25,7 @@ form.addEventListener("submit", function (event) {
       if (data.success) {
         alert("Request sent successfully!");
         form.reset();
+        window.location.href = "/frontend/index.html";
       } else {
         alert("Error: " + data.message);
       }

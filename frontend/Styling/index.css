@@ -13,6 +13,11 @@
   z-index: -1;
 }
 
+.full-screen {
+  height: 100vh;
+  width: 100%;
+}
+
 .request-coins {
   display: flex;
   justify-content: center;
@@ -146,4 +151,14 @@
   display: flex;
   gap: 20px;
   margin-bottom: 5%;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+a:hover {
+  color: white;
+  transition: background-color 0.5s;
 }

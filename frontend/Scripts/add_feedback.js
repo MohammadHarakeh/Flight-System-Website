@@ -25,7 +25,8 @@ form.addEventListener("submit", function (event) {
             const data = response.data;
             if (data.success) {
                 alert("Feedback added successfully!");
-                form.reset(); // Reset the form after successful submission
+                form.reset();
+                window.location.href = "/frontend/index.html";
             } else {
                 alert("Error: " + data.message);
             }
