@@ -25,8 +25,6 @@ while ($query ->fetch()) {
     $response[] = $news;
 }
 
-// $update_booking = $mysqli->query('UPDATE bookings SET flightID = ?, BookingDate = ?, NumberofPassenger = ?, SeatNumbers = ?, PaymentStatus = ? WHERE UserID = ?'); 
-
 echo json_encode($response);
 
 $mysqli ->close();
